@@ -105,4 +105,14 @@ namespace recipe_1_09
 	{
 		return DummyCollectionConstIter<T, Size>(collection, collection.getSize());
 	};
+
+	void run()
+	{
+		DummyCollection<std::string, 5> a{"yo", "tere", "123", "78", "."};
+
+		for (const auto& aa : a)
+		{
+			std::cout << aa << std::endl;
+		}
+	}
 }

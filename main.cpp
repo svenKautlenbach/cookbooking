@@ -3,6 +3,9 @@
 
 #include "for_each_custom.h"
 
+#define SOMELIB_VER_1
+#include "inline_namespace.h"
+
 
 int main(int argc, char* argv[])
 {
@@ -11,12 +14,7 @@ int main(int argc, char* argv[])
 
 	try
 	{
-		recipe_1_09::DummyCollection<std::string, 5> a{"yo", "tere", "123", "78", "."};
-
-		for (const auto& aa : a)
-		{
-			std::cout << aa << std::endl;
-		}
+		recipe_1_12::run();
 	}
 	catch (const std::runtime_error& e)
 	{
