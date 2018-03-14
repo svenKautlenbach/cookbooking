@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cassert>
 #include <cstddef>
 
 namespace recipe_1_09
@@ -11,9 +12,8 @@ namespace recipe_1_09
 
 		DummyCollection(const std::initializer_list<T>& list)
 		{
-			size_t i = 0;
-			for (const auto& l : list)
-				setAt(i++, l);
+			assert(list.size() <= Size);
+			std::copy(list.begin(), list.end(), m_data);
 		}
 
 		const T& getAt(const size_t index) const
